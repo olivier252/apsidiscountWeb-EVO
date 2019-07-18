@@ -45,10 +45,4 @@ public class ArticleController {
 			return "article";
 	}
 	
-	@GetMapping(produces = "application/json", path = "/api/allarticle")
-	public String displayAllArticle(Model model) throws ArticleInconnuException {
-		List<Article> article = articleService.getAllArticle();
-		model.addAttribute("article", article);
-		return "article";
-	}
 }
