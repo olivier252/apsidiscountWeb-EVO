@@ -57,7 +57,6 @@ public class ArticleRestController {
 		
 	}
 	
-
 	@PutMapping(consumes = "application/json", produces = "application/json", path = "article/{id}")
 	public Article modifyArticle(Article article) throws ArticleInconnuException {
 		return articleService.modifier(article, article.getId());
