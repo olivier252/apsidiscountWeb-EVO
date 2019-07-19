@@ -53,6 +53,7 @@ public class ArticleRestController {
 	@GetMapping(produces = "application/json", path="/api/allarticle")
 	public List<Article> getAllArticle() {
 		return  articleService.getAllArticle();
+		
 	}
 	
 }
