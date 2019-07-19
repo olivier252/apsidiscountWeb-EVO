@@ -45,10 +45,10 @@ public class ArticleController {
 //	}
 
 
-	@PutMapping("article/{id}")
-	public Article modifyArticle(Article article) throws ArticleInconnuException {
-		return articleService.modifier(article, article.getId());
-	}
+//	@PutMapping("article/{id}")
+//	public Article modifyArticle(Article article) throws ArticleInconnuException {
+//		return articleService.modifier(article, article.getId());
+//	}
 }
 
 
