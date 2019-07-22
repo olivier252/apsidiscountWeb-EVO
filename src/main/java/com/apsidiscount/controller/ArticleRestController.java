@@ -64,14 +64,15 @@ public class ArticleRestController {
 	}
 	
 	//Ajout 21/7
-	@GetMapping(produces = "application/json", path="/api/articlebycategorie")
-	public List<Article> getArticlesByCat(Categorie cat) {
-		return  articleService.getArticlesByCategory(cat);
+	@GetMapping(produces = "application/json", path="/api/categorie/{id}/article")
+	public List<Article> getArticlesByCat(@PathVariable Long id) {
+		
+		return  articleService.getArticlesByCategory(id);
 	}
 	
-	@GetMapping(produces = "application/json", path="/api/articlebymanufacturer")
-	public List<Article> getArticlesByConstruct(Constructeur constructeur) {
-		return  articleService.getArticlesByConstructeur(constructeur);
+	@GetMapping(produces = "application/json", path="/api/manufacturer/{id}/article")
+	public List<Article> getArticlesByConstruct(@PathVariable Long id) {
+		return  articleService.getArticlesByConstructeur(id);
 		
 	}
 	
