@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.apsidiscount.entity.Article;
+import com.apsidiscount.entity.Categorie;
+import com.apsidiscount.entity.Constructeur;
 import com.apsidiscount.service.ArticleInconnuException;
 import com.apsidiscount.service.ArticleService;
 
@@ -54,12 +56,23 @@ public class ArticleRestController {
 	@GetMapping(produces = "application/json", path="/api/allarticle")
 	public List<Article> getAllArticle() {
 		return  articleService.getAllArticle();
-		
 	}
 	
 	@PutMapping(consumes = "application/json", produces = "application/json", path = "/api/article/{id}")
 	public Article modifyArticle(@RequestBody Article article) throws ArticleInconnuException {
 		return articleService.modifier(article);
+	}
+	
+	//Ajout 21/7
+	@GetMapping(produces = "application/json", path="/api/articlebycategorie")
+	public List<Article> getArticlesByCat(Categorie categorie) {
+		return  articleService.getArticlesByCategory(categorie);
+	}
+	
+	@GetMapping(produces = "application/json", path="/api/articlebymanufacturer")
+	public List<Article> getArticlesByConstruct(Constructeur constructeur) {
+		return  articleService.getArticlesByConstructeur(constructeur);
+		
 	}
 	
 }
