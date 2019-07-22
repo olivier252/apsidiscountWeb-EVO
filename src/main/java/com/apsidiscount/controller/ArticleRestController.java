@@ -65,8 +65,8 @@ public class ArticleRestController {
 	
 	//Ajout 21/7
 	@GetMapping(produces = "application/json", path="/api/articlebycategorie")
-	public List<Article> getArticlesByCat(Categorie categorie) {
-		return  articleService.getArticlesByCategory(categorie);
+	public List<Article> getArticlesByCat(Categorie cat) {
+		return  articleService.getArticlesByCategory(cat);
 	}
 	
 	@GetMapping(produces = "application/json", path="/api/articlebymanufacturer")
